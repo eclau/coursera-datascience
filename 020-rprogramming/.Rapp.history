@@ -1,0 +1,229 @@
+version
+a <- avaliable.packages()
+a <- available.packages()
+head(rownames(a), 3)
+install.packages("slidify")
+load.packages("kernsmooth")
+library(kernsmooth)
+library(KernSmooth)
+search()
+library(KernSmooth)
+library("KernSmooth")
+search()
+install.packages("slidify")
+install.packages("ggplot2")
+library(ggplot2)
+search()
+getwd()
+ls()
+source("/Users/elau/Documents/Development/Coursera/020-rprogramming/test.R")
+myfunction()
+myfunction(3)
+source("/Users/elau/Documents/Development/Coursera/020-rprogramming/test.R")
+myfunction(3)
+version()
+version
+x <- 1
+print(x)
+x
+msg <- "hello"
+msg
+# test
+x <- 1:20
+x <- 1:10
+x
+y <- vector()
+y
+y <- 3L
+y
+y <- 1 / 0
+y
+y <- 1 / inf
+y <- 1 / Inf
+y
+attributes(y)
+attributes(x)
+attributes()
+x <- vector("numeric", length = 10)
+x
+x <- c(1, "a")
+x
+u <- c("a", TRUE)
+u
+clear
+cls
+x <- 0:6
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+x <- c("a", "b", "c")
+as.numeric(x)
+as.logical(x)
+as.complex(x)
+x <- list(1, "a", TRUE, 1 + 4i)
+x
+x <- list(1, 2, "a", TRUE, 1 + 4i)
+x
+m <- matrix(nrow = 2, ncol = 3)
+m
+dim(m)
+attributes(m)
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
+m <- 1:10
+dim(m) <- c(2, 5)
+m
+x <- 1:2
+y <- 10:12
+cbind(x, y)
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+rbind(x, y)
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x
+tables(x)
+table(x)
+unclass(x)
+x <- factor(c("yes", "yes",))> x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
+x <- factor(c("yes", "yes",))> x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
+x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
+x
+x <- c(1, 2, NA, 3, 4)
+is.na(x)
+is.nan(x)
+x <- 4
+class(x)
+x <- c(4, "a", TRUE)
+class(x)
+x <- c(1, 3, 5)
+y <- c(3, 2, 10)
+cbind(x, y)
+x <- list(2, "a", "b", TRUE)
+x[[1]]
+class(x[[1]])
+x <- 1:4
+y <- 2:3
+x + y
+x <- c(17, 14, 4)
+x[x > 10] <- 4
+x
+x <- c(17, 14, 4)
+x[x > 10] == 4
+x
+x[x >= 10] <- 4
+x
+x[x >= 10]
+x
+x <- c(17, 14, 4)
+x[x >= 10]
+x
+x[x >= 10] <- 2
+x
+x
+y <- c("a", "x")
+cbind(x, y)
+y <- c("a", "x", "c")
+cbind(x, y)
+x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
+x
+nrow(x)
+ncol(x)
+x <- data.frame(foo = 1:3, bar = c(T, T, F, F))
+x
+data.matrix(x)
+read.csv("hw1_data.csv")
+x <- read.csv("hw1_data.csv")
+x
+x[1]
+x[0,1]
+x[0, 1]
+t <- 1:3
+names(t)
+names(t) <- c("foo", "bar", "norf")
+t
+names(t)
+l <- list(a = 1, b = 2, c = 3)
+l
+m <- matrix(1:4, nrow = 2, ncol = 3)
+m <- matrix(1:4, nrow = 2, ncol = 2)
+m
+dimension(m) <- list(c("foo", "bar"), c("abc", "xyz"))
+dimenames(m) <- list(c("foo", "bar"), c("abc", "xyz"))
+dimnames(m) <- list(c("foo", "bar"), c("abc", "xyz"))
+m
+x
+head(x)
+tail(x, 2)
+x[1]
+x[1,]
+x[47,]
+missingVal <- x[1]
+missingVal
+missingVal[missingVal == NA]
+missingVal <- c(x[1])
+missingVal
+missingVal <- factor(c(x[1]))
+missingVal
+class(missingVal)
+missingValVector <- vector(missingVal)
+levels(factor(x$col))
+x
+levels(factor(x$1))
+unique(x)
+unique(x$1)
+unique(x$col)
+unique(x$Ozone)
+levels(factor(x$Ozone))
+class(levels(factor(x$Ozone)))
+missingVal <- c(x[1])
+missingVal
+missingValVector <- as.vector(missingVal)
+missingValVector
+class(missingValVector)
+class(c(1,2))
+table(x$Ozone)
+is.na(x$Ozone)
+sum(is.na(x$Ozone))
+class(is.na(x$Ozone))
+sum(x$Ozone)
+z$Ozone
+x$Ozone
+class(x$Ozone)
+Ozone <- class(x$Ozone)
+Ozone
+Ozone <- x$Ozone
+Ozone
+Ozone[is.na(Ozone) == 0]
+Ozone <- Ozone[is.na(Ozone) == 0]
+Ozone
+Avg(Ozone)
+mean(Ozone)
+x
+names(x)
+x.sub <- subset(x, x$Ozone > 31)
+x.sub
+x.sub <- subset(x, x$Ozone > 31 & x$Temp > 90)
+x.sub
+mean(x.sub$Solar.R)
+class(x.sub$Solar.R)
+mean(subset(x, x$Month = 6)$Temp)
+x.june <- subset(x, x$Month = 6)
+x.june <- subset(x, x$Month == 6)
+x.june
+mean(x.june$Temp)
+mean(subset(x, x$Month == 6)$Temp)
+max(subset(x, x$Month == 5)$Ozone)
+max(subset(x, x$Month == 5, is.na(x$Ozone) = 0)$Ozone)
+max(subset(x, x$Month == 5, is.na(x$Ozone) == 0)$Ozone)
+max(subset(x, x$Month == 5 & is.na(x$Ozone) == 0)$Ozone)
+a <- c(1,3,5)
+b <- c(3,2,10)
+rbind(a,b)
+a <- 1:4
+b <- 2
+a + b
+a <- list(2, "a")
+a[[2]]
+class(a[[2]])
