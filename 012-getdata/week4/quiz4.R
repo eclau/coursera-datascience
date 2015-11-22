@@ -67,4 +67,5 @@ yeargroup <- group_by(df2, year)
 count(df2, year)
 # 2012 occurs 250 times
 df3 <- mutate(df2, dayofweek = weekdays(as.Date(sampleTimes)))
-df3[df3$year == "2012" & df3$dayofweek == "Monday",]
+nrow(df3[df3$year == "2012" & df3$dayofweek == "Monday",])
+# 2012 and Monday occurs 47 times
