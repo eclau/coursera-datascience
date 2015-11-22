@@ -1,12 +1,15 @@
 # Introduction
 The script run_analysis.R produces a result.txt file that contains the average of all mean gyrometer and gravitational acceleration measurements for each subject and each activity.
+
 ## Purpose
 The purpose of this project is to prepare the raw set of data into a tidy data format which can be used later for analysis.
+
 ## Requirement
 * Please download and unzip and accompanying 'UCI HAR Dataset.zip' before executing run_analysis.R
 * R code requires the following libraries to be installed:
   * dplyr
   * plyr
+
 ## run_analysis.R Walk-through
 1. Extract both feature and activity labels
 2. Merge the test data with the extracted feature and activity labels
@@ -16,6 +19,7 @@ The purpose of this project is to prepare the raw set of data into a tidy data f
 6. Use ddply to apply mean to each of the variable for each subject id and each activity
 7. Sort the result data set by subject id and activty
 6. Export the results into result.txt in the working directory
+
 ## Data Dictionary
 * subject 1
   * Volunteer within an age bracket of 19-48 years, denoted by 1 - 6
