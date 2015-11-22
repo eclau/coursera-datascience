@@ -5,7 +5,7 @@ The script run_analysis.R produces a result.txt file that contains the average o
 The purpose of this project is to prepare the raw set of data into a tidy data format which can be used later for analysis.
 
 ## Requirement
-* Please download and unzip and accompanying 'UCI HAR Dataset.zip' before executing run_analysis.R
+* Please download and unzip the accompanying 'UCI HAR Dataset.zip' before executing run_analysis.R
 * R code requires the following libraries to be installed:
   * dplyr
   * plyr
