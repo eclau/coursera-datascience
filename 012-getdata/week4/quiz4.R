@@ -11,6 +11,8 @@ summary(survey)
 splitNames <- strsplit(names(survey), "wgtp")
 splitNames[[123]]
 
+# A1: [1] ""   "15"
+
 # Q2: Load data on GDP for the 190 ranked countries
 #     https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
 #     Remove the commas from the GDP numbers in millions of dollars and average them. What is the average? 
@@ -29,6 +31,8 @@ head(gdp, n=10)
 gdp <- select(gdp, country:gdp)
 gdp2 <- mutate(gdp, gdpInt = as.integer(gsub(",", "", gdp)))
 mean(gdp2$gdpInt)
+
+## A2: 377652.4
 
 ## Q3: In the data set from Q2, what is the regex that would allow you you to count the number of countries whose name begins with "United"? 
 ##     Assume that the variable with the country names in it is named countryNames. How many countries begin with United?
@@ -62,3 +66,5 @@ df2 <- mutate(df, year = format(sampleTimes, "%Y"))
 yeargroup <- group_by(df2, year)
 count(df2, year)
 # 2012 occurs 250 times
+df3 <- mutate(df2, dayofweek = weekdays(as.Date(sampleTimes)))
+df3[df3$year == "2012" & df3$dayofweek == "Monday",]

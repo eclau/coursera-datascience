@@ -3,6 +3,8 @@ library(httr)
 library(httpuv)
 library(jsonlite)
 
+setwd("~/Documents/Development/Coursera/coursera-datascience/012-getdata/week2")
+
 ## Tutorial https://datatweet.wordpress.com/2014/05/14/reading-data-from-github-api-using-r/
 ## Register https://api.github.com/users/jtleek/repos on https://github.com/settings/applications
 ## Example code: https://github.com/hadley/httr/blob/master/demo/oauth2-github.r
@@ -35,6 +37,8 @@ myJSONParsed <- jsonlite::fromJSON((toJSON(myJSON)))
 myJSONParsed$created_at
 stop_for_status(myRequest)
 
+## A1: 2013-11-07T13:25:07Z
+
 ## Q2: The sqldf package allows for execution of SQL commands on R data frames. 
 ##     We will use the sqldf package to practice the queries we might send with the dbSendQuery command in RMySQL. 
 ##     Download the American Community Survey data and load it into an R object called 'acs'
@@ -48,9 +52,13 @@ csvFile <- "ss06pid.csv"
 acs <- fread(csvFile)
 
 ## Which of the following commands will select only the data for the probability weights pwgtp1 with ages less than 50?
+
+## A2.
 sqldf("select pwgtp1 from acs where AGEP < 50")
 
 ## Q3. Using the same data frame you created in the previous problem, what is the equivalent function to unique(acs$AGEP)
+
+## A3.
 sqldf("select distinct AGEP from acs")
 
 ## Q4. How many characters are in the 10th, 20th, 30th and 100th lines of HTML from this page: http://biostat.jhsph.edu/~jleek/contact.html 
@@ -58,6 +66,19 @@ con <- url("http://biostat.jhsph.edu/~jleek/contact.html")
 htmlCode <- readLines(con)
 close(con)
 lapply(c(htmlCode[10], htmlCode[20], htmlCode[30], htmlCode[100]), nchar) 
+
+## A4.
+# [[1]]
+# [1] 45
+# 
+# [[2]]
+# [1] 31
+# 
+# [[3]]
+# [1] 7
+# 
+# [[4]]
+# [1] 25
 
 # NB: readLine() returns a vector of characters
 
@@ -75,3 +96,6 @@ columnTypes <- c("string", "string", "double", "double", "double", "double", "do
 #myFixedWidth <- laf_open_fwf("getdata-wksst8110.for", column_widths = columnWidths, column_types = columnTypes, column_names = columnNames, trim = TRUE)
 DF <- read.fwf("getdata-wksst8110.for", widths=columnWidths, skip=4, col.names = columnNames)
 sum(DF[,5])
+
+## A5.
+# 32426.7

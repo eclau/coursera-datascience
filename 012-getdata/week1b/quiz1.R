@@ -69,6 +69,7 @@ if (!file.exists(xmlFile)) {
   download.file(fileURL, destfile = xmlFile, method = "curl")
 }
 
+install.packages("XML")
 library(XML)
 myRestaurant <- xmlTreeParse(xmlFile, useInternal = TRUE)
 
