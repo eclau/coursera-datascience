@@ -1,5 +1,7 @@
 # Introduction
 The script run_analysis.R produces a result.txt file that contains the average of all mean gyrometer and gravitational acceleration measurements for each subject and each activity.
+# Purpose
+The purpose of this project is to prepare the raw set of data into a tidy data format which can be used later for analysis.
 # Requirement
 Please download and unzip and accompanying 'UCI HAR Dataset.zip' before executing run_analysis.R
 # Data Dictionary
@@ -13,69 +15,135 @@ Please download and unzip and accompanying 'UCI HAR Dataset.zip' before executin
     4. SITTING
     5. STANDING
     6. LAYING
-* tBodyAcc.mean.X
-* tBodyAcc.mean.Y
-* tBodyAcc.mean.Z
-* tBodyAcc.std.X
-* tBodyAcc.std.Y
-* tBodyAcc.std.Z
-* tGravityAcc.mean.X
-* tGravityAcc.mean.Y
-* tGravityAcc.mean.Z
-* tGravityAcc.std.X
-* tGravityAcc.std.Y
-* tGravityAcc.std.Z
-* tBodyAccJerk.mean.X
-* tBodyAccJerk.mean.Y
-* tBodyAccJerk.mean.Z
-* tBodyAccJerk.std.X
-* tBodyAccJerk.std.Y
-* tBodyAccJerk.std.Z
-* tBodyGyro.mean.X
-* tBodyGyro.mean.Y
-* tBodyGyro.mean.Z
-* tBodyGyro.std.X
-* tBodyGyro.std.Y
-* tBodyGyro.std.Z
-* tBodyGyroJerk.mean.X
-* tBodyGyroJerk.mean.Y
-* tBodyGyroJerk.mean.Z
-* tBodyGyroJerk.std.X
-* tBodyGyroJerk.std.Y
-* tBodyGyroJerk.std.Z
-* tBodyAccMag.mean
-* tBodyAccMag.std
-* tGravityAccMag.mean
-* tGravityAccMag.std
-* tBodyAccJerkMag.mean
-* tBodyAccJerkMag.std
-* tBodyGyroMag.mean
-* tBodyGyroMag.std
-* tBodyGyroJerkMag.mean
-* tBodyGyroJerkMag.std
-* fBodyAcc.mean.X
-* fBodyAcc.mean.Y
-* fBodyAcc.mean.Z
-* fBodyAcc.std.X
-* fBodyAcc.std.Y
-* fBodyAcc.std.Z
-* fBodyAccJerk.mean.X
-* fBodyAccJerk.mean.Y
-* fBodyAccJerk.mean.Z
-* fBodyAccJerk.std.X
-* fBodyAccJerk.std.Y
-* fBodyAccJerk.std.Z
-* fBodyGyro.mean.X
-* fBodyGyro.mean.Y
-* fBodyGyro.mean.Z
-* fBodyGyro.std.X
-* fBodyGyro.std.Y
-* fBodyGyro.std.Z
-* fBodyAccMag.mean
-* fBodyAccMag.std
-* fBodyBodyAccJerkMag.mean
-* fBodyBodyAccJerkMag.std
-* fBodyBodyGyroMag.mean    
-* fBodyBodyGyroMag.std
-* fBodyBodyGyroJerkMag.mean
-* fBodyBodyGyroJerkMag.std
+* tBodyAcc.mean.X m/seg2
+  * Average of body acceleration mean on X axis
+* tBodyAcc.mean.Y m/seg2
+  * Average of body acceleration mean on Y axis
+* tBodyAcc.mean.Z m/seg2
+  * Average of body acceleration mean on Z axis
+* tBodyAcc.std.X m/seg2
+  * Average of body acceleration standard deviation on X axis
+* tBodyAcc.std.Y m/seg2
+  * Average of body acceleration standard deviation on Y axis
+* tBodyAcc.std.Z m/seg2
+  * Average of body acceleration standard deviation on Z axis
+* tGravityAcc.mean.X m/seg2
+  * Average of bravity acceleration mean on X axis
+* tGravityAcc.mean.Y m/seg2
+  * Average of gravity acceleration mean on Y axis
+* tGravityAcc.mean.Z m/seg2
+  * Average of gravity acceleration mean on Z axis
+* tGravityAcc.std.X m/seg2
+  * Average of gravity acceleration standard deviation on X axis
+* tGravityAcc.std.Y m/seg2
+  * Average of gravity acceleration standard deviation on Y axis
+* tGravityAcc.std.Z m/seg2
+  * Average of gravity acceleration standard deviation on Z axis
+* tBodyAccJerk.mean.X m/seg2
+  * Average of body acceleration jerk mean on X axis
+* tBodyAccJerk.mean.Y m/seg2
+  * Average of body acceleration jerk mean on Y axis
+* tBodyAccJerk.mean.Z m/seg2
+  * Average of body acceleration jerk mean on Z axis
+* tBodyAccJerk.std.X m/seg2
+  * Average of body acceleration jerk standard deviation on X axis
+* tBodyAccJerk.std.Y m/seg2
+  * Average of body acceleration jerk standard deviation on Y axis
+* tBodyAccJerk.std.Z m/seg2
+  * Average of body acceleration jerk standard deviation on Z axis
+* tBodyGyro.mean.X rad/seg
+  * Average of body gyrometer mean on X axis
+* tBodyGyro.mean.Y rad/seg
+  * Average of body gyrometer mean on Y axis
+* tBodyGyro.mean.Z rad/seg
+  * Average of body gyrometer mean on Z axis
+* tBodyGyro.std.X rad/seg
+  * Average of body gyrometer standard deviation on X axis
+* tBodyGyro.std.Y rad/seg
+  * Average of body gyrometer standard deviation on Y axis
+* tBodyGyro.std.Z rad/seg
+  * Average of body jerk gyrometer standard deviation on Z axis
+* tBodyGyroJerk.mean.X rad/seg
+  * Average of Body jerk gyrometer mean on X axis
+* tBodyGyroJerk.mean.Y rad/seg
+  * Average of Body jerk gyrometer mean on Y axis
+* tBodyGyroJerk.mean.Z rad/seg
+  * Average of Body jerk gyrometer mean on Z axis
+* tBodyGyroJerk.std.X rad/seg
+  * Average of body gyrometer jerk standard deviation on X axis
+* tBodyGyroJerk.std.Y rad/seg
+  * Average of body gyrometer jerk standard deviation on Y axis
+* tBodyGyroJerk.std.Z rad/seg
+  * Average of body gyrometer jerk standard deviation on Z axis
+* tBodyAccMag.mean m/seg2
+  * Average of body accelerometer magnitude mean
+* tBodyAccMag.std m/seg2
+  * Average of body accelerometer magnitude standard deviation
+* tGravityAccMag.mean m/seg2
+  * Average of gravity accelerometer magnitude mean
+* tGravityAccMag.std m/seg2
+  * Average of gravity accelerometer magnitude standard deviation
+* tBodyAccJerkMag.mean m/seg2
+  * Average of body accelerometer jerk magnitude mean
+* tBodyAccJerkMag.std m/seg2
+  * Average of body accelerometer jerk magnitude standard deviation
+* tBodyGyroMag.mean rad/seg
+  * Average of body gyrometer magnitude mean
+* tBodyGyroMag.std rad/seg
+  * Average of body gyrometer magnitude standard deviation
+* tBodyGyroJerkMag.mean rad/seg
+  * Average of body gyrometer jerk magnitude mean
+* tBodyGyroJerkMag.std rad/seg
+  * Average of body gyrometer jerk magnitude standard deviation
+* fBodyAcc.mean.X m/seg2
+  * Average of body acceleration mean on X axis
+* fBodyAcc.mean.Y m/seg2
+  * Average of body acceleration mean on Y axis
+* fBodyAcc.mean.Z m/seg2
+  * Average of body acceleration mean on Z axis
+* fBodyAcc.std.X m/seg2
+  * Average of body acceleration standard deviation on X axis
+* fBodyAcc.std.Y m/seg2
+  * Average of body acceleration standard deviation on Y axis
+* fBodyAcc.std.Z m/seg2
+  * Average of body acceleration standard deviation on Z axis
+* fBodyAccJerk.mean.X m/seg2
+  * Average of body acceleration jerk mean on X axis
+* fBodyAccJerk.mean.Y m/seg2
+  * Average of body acceleration jerk mean on Y axis
+* fBodyAccJerk.mean.Z m/seg2
+  * Average of body acceleration jerk mean on Z axis
+* fBodyAccJerk.std.X m/seg2
+  * Average of body acceleration jerk standard deviation on X axis
+* fBodyAccJerk.std.Y m/seg2
+  * Average of body acceleration jerk standard deviation on Y axis
+* fBodyAccJerk.std.Z m/seg2
+  * Average of body acceleration jerk standard deviation on Z axis
+* fBodyGyro.mean.X rad/seg
+  * Average of body gyrometer mean on X axis
+* fBodyGyro.mean.Y rad/seg
+  * Average of body gyrometer mean on Y axis
+* fBodyGyro.mean.Z rad/seg
+  * Average of body gyrometer mean on Z axis
+* fBodyGyro.std.X rad/seg
+  * Average of body gyrometer standard deviation on X axis
+* fBodyGyro.std.Y rad/seg
+  * Average of body gyrometer standard deviation on Y axis
+* fBodyGyro.std.Z rad/seg
+  * Average of body gyrometer standard deviation on Z axis
+* fBodyAccMag.mean rad/seg
+  * Average of body accelerometer magnitude mean
+* fBodyAccMag.std  rad/seg
+  * Average of body accelerometer magnitude standard deviation
+* fBodyBodyAccJerkMag.mean rad/seg
+  * Average of body accelerometer jerk mean
+* fBodyBodyAccJerkMag.std rad/seg
+  * Average of body accelerometer jerk standard deviation
+* fBodyBodyGyroMag.mean m/seg2
+  * Average of body gyrometer magnitude mean
+* fBodyBodyGyroMag.std m/seg2
+  * Average of body gyrometer magnitude standard deviation
+* fBodyBodyGyroJerkMag.mean m/seg2
+  * Average of body gyrometer jerk magnitude mean
+* fBodyBodyGyroJerkMag.std m/seg2
+  * Average of body gyrometer jerk standard deviation
